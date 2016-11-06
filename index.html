@@ -21,6 +21,7 @@
                     /* offset x, offset y, blur-radius, spread-radius, color */
                 }
                 body {
+                    display: flex;
                     margin: 0px;
                     overflow: hidden;
                     background-color: black;
@@ -56,7 +57,10 @@
                 }
             
             .bigCenter {
-                font-size: 40px;    
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 40px;
             }
             
             a:link, a:visited, a:active {
@@ -83,9 +87,10 @@
             <a href="" class="mainMenuButton selected">About me</a>
             <a href="flashcards.html" class="mainMenuButton">Flashcards</a>
             <a href="" class="mainMenuButton">Something else</a>
-            <a id="hamburgerMenu">☰</a>
+            <a id="hamburgerMenu">☰ Menu</a>
         </div>
-        <div class="bigCenter">This text should be in front of the background image.</div>
-
+        <div  class="bigCenter">
+        <div>This text should be in front of the background image.</div>
+        </div>
     </body>
 </html>
