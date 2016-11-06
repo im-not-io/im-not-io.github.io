@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Informatics 133: Midterm project web page">
+        <meta name="author" content="Nicholas Joseph DiGeronimo">
+        <title>Midterm project</title>
+        
+        <!--MOVE TO EXTERNAL FILE-->
+        <style>
+            
+            .notecard {
+                width: 100%;
+                clip-path: circle(30px at 35px 35px);
+
+            }
+
+            .flippableElement {
+                position: absolute;
+                display: flex;
+                width: 100%;
+                height: 90%;
+                top: 0px;
+                left: 0px;
+                box-shadow: 0px 0px 10px 0px silver, inset 0 0 20px 10px silver; /* x-offset y-offset blur-radius spread-radius color */
+                transition: transform 2s;
+                backface-visibility: hidden;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box; /* automatically factor in padding when calculating width size */
+                cursor: pointer;
+                font-size: 3em;
+                padding: 8%;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .flippableElement.faceUp {
+                transform-style: preserve-3d;
+                transform: rotateY(0deg);
+
+            }
+            .flippableElement.faceDown {
+                transform-style: preserve-3d;
+                transform: rotateY(180deg);
+            }
+            
+
+            #notecardBottom {
+                position: absolute;
+                bottom: 5px;
+                display: flex;
+                width: 100%;
+                height: 10%;
+                margin: auto;
+                justify-content: center;
+                background: linear-gradient(to bottom, hsl(0, 0%, 97%) 10%, hsl(0, 0%, 91%) 100%);
+                /* border: solid 10px blue; */
+               /* box-shadow: 0px -20px 10px 0px blue;*/
+                                box-shadow: 0px 0px 10px 0px gray; //x-offset y-offset blur-radius spread-radius color;
+                z-index: 2;
+            }
+            body {
+                margin: 0;
+            }
+            .menu-option {
+                border-left: 2px solid white; 
+                border-right: 2px solid white;
+                color: white;
+                height: 100%;
+            }
+            
+            #notecardBottom div:first-child {
+                border-left: 2px solid hsl(0, 0%, 80%);
+
+            }
+            
+            .menu-item {
+                font-family: Tahoma, Geneva, sans-serif;
+                font-size: 20px;
+                display : flex;
+                align-items : center;
+                margin: 0px;
+                text-decoration: none;
+                color: #787C7D;
+                vertical-align:middle;
+                border-right: 2px solid hsl(0, 0%, 80%);
+                padding-left: 10px;
+                padding-right: 10px;
+                text-shadow: 0 1px 0 white;
+                transition: background-color .7s, box-shadow .7s;
+                cursor: pointer;
+                
+            }
+            .menu-item:hover {
+                background-color: hsla(0, 0%, 50%, .2);
+            }
+            
+
+
+      
+            
+        </style>
+    </head>
+    <body>
+        
+        <div class="notecard">
+            <div id="notecardQuestion" class="flippableElement">This is the front of the card.</div>
+            <div id="notecardAnswer" class="flippableElement">This is the back of the card.</div>
+            <br> <br> <br> <br> <br> <br><br> <br> <br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+            <div id="notecardBottom">
+                <div class="menu-item">◀</div>
+                <div class="menu-item" id="flipButton">Flip</div>
+                <div class="menu-item">▶</div>
+            </div>
+            
+            
+        </div>
+        
+    <script>
+        
+                function flip(id) {
+            var flippableElement = document.getElementById(id);
+            switch (flippableElement.className) {
+                case "flippableElement": 
+                    //initial look (never been flipped by user)
+                    flippableElement.className = "flippableElement faceDown";
+                    break;
+                case "flippableElement faceDown":
+                    flippableElement.className = "flippableElement faceUp";
+                    break;
+                case "flippableElement faceUp":
+                    flippableElement.className = "flippableElement faceDown";
+                    break;
+                default:
+                    throw "flippableElement not detected."     
+            }
+    console.log("id: " + id + " " + flippableElement.className);
+
+        }
+        
+        
+        document.addEventListener("DOMContentLoaded", function(event) {
+            console.log("dom loaded")
+            flip("notecardAnswer");
+
+            document.getElementById("flipButton").addEventListener("click", function() {
+                    //flip both the question and answer divs when the flip button is clicked
+                    console.log("flip attempt")
+                    flip("notecardQuestion");
+                    flip("notecardAnswer");
+
+                });
+            document.getElementById("notecardQuestion").addEventListener("click", function() {
+                    //flip both the question and answer divs when the notecard is clicked
+                    flip("notecardQuestion");
+                    flip("notecardAnswer");
+                });
+            document.getElementById("notecardAnswer").addEventListener("click", function() {
+                    //flip both the question and answer divs when the notecard
+                    //this is added since I don't have useCapture for addEventListener set to true
+                    flip("notecardQuestion");
+                    flip("notecardAnswer");
+                });
+        });
+        
+
+
+    </script>
+    </body>
+</html>
+
+<!--
+Your HTML files must have proper structure including a <html>, <head>, and <body> tags, a proper title, author meta tag, links to external CSS or JavaScript, and utilize semantic HTML5 tags (doesnt need to be all of them, but try to use them where appropriate).
+Your folder structure must have a directory called "css" where your external css file is and a "js" folder with your external JavaScript file(s). All images must be placed in a directory called "img". You just use "relative URLs" for pointing to your css, JS and image files. All html files must be in the root directory.
+-->
