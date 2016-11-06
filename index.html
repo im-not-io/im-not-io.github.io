@@ -8,50 +8,62 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <!--MOVE TO EXTERNAL FILE-->
         <style>
-            #menuBar {
-                position: absolute;
-                top: 0px;
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                background-color: black;
-                width: 100%;
-                height: 50px;
-                /* offset x, offset y, blur-radius, spread-radius, color */
-            }
-            body {
-                margin: 0px;
-                overflow: hidden;
-                background-color: black;
-                font-family: 'Open Sans', sans-serif;
-                background-image: url("https://psntnick.github.io/img/shockHeader.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                white-space: nowrap; /* no ugly text wrapping if our screen is shrunk */
-            }
-            .mainMenuButton {
-                color: white;
-                margin-right: 12px;
-                margin-left: 12px;
-                padding-bottom: 3px;
-                text-decoration: none;
-                font-size: 20px;
-                border-bottom: 3px solid black; /* to prevent the links from "jumping" because of the new border */
-                transition: border-bottom 0.5s;
-            }
-            
-            .mainMenuButton.selected {
-                border-bottom: 3px solid white;
-            }
-            
-            .mainMenuButton:hover {
-                border-bottom: 3px solid white;
-            }
-            
-            @media (max-width: 68em) {
+
                 #menuBar {
-                    background-color: red;
+                    position: absolute;
+                    top: 0px;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    background-color: black;
+                    width: 100%;
+                    height: 50px;
+                    /* offset x, offset y, blur-radius, spread-radius, color */
+                }
+                body {
+                    margin: 0px;
+                    overflow: hidden;
+                    background-color: black;
+                    font-family: 'Open Sans', sans-serif;
+                    background-image: url("https://psntnick.github.io/img/shockHeader.jpg");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+
+                    white-space: nowrap; /* no ugly text wrapping if our screen is shrunk */
+                }
+                .mainMenuButton {
+                    color: white;
+                    margin-right: 12px;
+                    margin-left: 12px;
+                    padding-bottom: 3px;
+                    text-decoration: none;
+                    font-size: 20px;
+                    border-bottom: 3px solid black; /* to prevent the links from "jumping" because of the new border */
+                    transition: border-bottom 0.5s;
+                }
+
+                .mainMenuButton.selected {
+                    border-bottom: 3px solid white;
+                }
+
+                .mainMenuButton:hover {
+                    border-bottom: 3px solid white;
+                }
+
+                #hamburgerMenu {
+                    visibility: hidden;
+                    font-size: 25px;
+                    padding-right: 40px;
+                    color: white;
+                }
+            
+            
+            @media screen and (max-width: 68em) {
+                #hamburgerMenu {
+                    visibility: visible;
+                }
+                .mainMenuButton {
+                    visibility: hidden;
                 }
             }
         </style>
@@ -61,6 +73,7 @@
             <a href="" class="mainMenuButton selected">About me</a>
             <a href="flashcards.html" class="mainMenuButton">Flashcards</a>
             <a href="" class="mainMenuButton">Something else</a>
+            <a id="hamburgerMenu">☰</a>
         </div>
 
     </body>
