@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="description" content="Informatics 133: Midterm project web page">
         <meta name="author" content="Nicholas Joseph DiGeronimo">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Midterm project</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <!--MOVE TO EXTERNAL FILE-->
@@ -18,7 +18,8 @@
                     align-items: center;
                     background-color: black;
                     width: 100%;
-                    height: 50px;
+                    padding-top: 9px;
+                    padding-bottom: 13px;
                     /* offset x, offset y, blur-radius, spread-radius, color */
                 }
                 body {
@@ -34,6 +35,7 @@
                     white-space: nowrap; /* no ugly text wrapping if our screen is shrunk */
                 }
                 .mainMenuButton {
+                    display: flex;
                     margin-right: 12px;
                     margin-left: 12px;
                     padding-bottom: 3px;
@@ -52,9 +54,10 @@
                 }
 
                 #hamburgerMenu {
+                    width: 30px;
                     visibility: hidden;
                     font-size: 25px;
-                    padding-right: 40px;
+                    padding-right: 20px;
                 }
             
             .bigCenter {
@@ -72,16 +75,59 @@
                 height: 90%;
             }
             
+            #dropdownMenu {
+                /* remove this */
+                position: absolute;
+                right: 46px; /* same as hamburger menu padding, minus a few pixels because the image has a border */
+                top: 50px; /* same as menu bar */
+                visibility: hidden;
+                z-index: 0;
+                background-color: red;
+            }
+            
             @media screen and (max-width: 68em) {
+                #menuBar {
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items:flex-end;
+                }
                 #hamburgerMenu {
                     visibility: visible;
                 }
+                
                 .mainMenuButton {
-                    visibility: hidden;
+                    display: none;
+                    border: none;
+                    transition: none;
+                    padding: 0;
+                    padding-right: 11px; /*to match hamburgerMenu*/
                 }
+                
+                .mainMenuButton.selected {
+                    border: none;
+                    transition: none;
+                    
+                }
+                
+                .mainMenuButton.visible, .mainMenuButton.selected.visible {
+                    display: none;    
+                }
+                
+                .mainMenuButton.hidden, mainMenuButton.selected.hidden {
+                    display: flex;    
+                }
+                
+                .mainMenuButton:hover {
+                    border: none;
+                    transition: none;
+                }
+                
                 body {
                     background-size: 68em auto;
                     background-size: 68em auto;
+                }
+                #dropdownMenu {
+                    visibility: visible;
                 }
             }
             
@@ -89,13 +135,46 @@
         </style>
     </head>
     <body>
+        <script>
+        function showMenuButtons() {
+            var mainMenuButtons = document.getElementsByClassName("mainMenuButton");
+            
+            for (var x = 0; x < mainMenuButtons.length; ++x) {
+                if (mainMenuButtons[x].classList.contains("hidden")) {
+                    mainMenuButtons[x].classList.remove("hidden")
+                    mainMenuButtons[x].classList.add("visible")
+                } else {
+                    mainMenuButtons[x].classList.remove("visible")
+                    mainMenuButtons[x].classList.add("hidden")
+                }
+            }
+
+        }
+
+
+//            for (var x = 0; x < mainMenuButtons.length; ++x) {
+//                var display = window.getComputedStyle(mainMenuButtons[x]).display; //strangely element.style.display defaults to blank string
+//                if (display === "flex" || display === "") {
+//                    mainMenuButtons[x].style.display = "none";
+//                } else {
+//                    mainMenuButtons[x].style.display = "flex";
+//                }
+//            }
+     
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.getElementById("hamburgerMenu").addEventListener("click", function() {
+                showMenuButtons();
+            })
+        });
+        </script>
         <div id="menuBar">
-            <a href="" class="mainMenuButton selected">About me</a>
-            <a href="flashcards.html" class="mainMenuButton">Flashcards</a>
-            <a href="" class="mainMenuButton">Something else</a>
             <img src="https://psntnick.github.io/img/cheeseburgerMenu.png" id="hamburgerMenu">
+            <a href="" class="mainMenuButton selected">About me</a>
+            <a href="flashcards.html" target="_blank" class="mainMenuButton">Flashcards</a>
+            <a href="" class="mainMenuButton">Something else</a>
         </div>
-        <div  class="bigCenter">
+        
+        <div class="bigCenter">
         <div>This text should be in front of the background image.</div>
         </div>
     </body>
