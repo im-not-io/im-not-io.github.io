@@ -25,14 +25,13 @@
                     overflow: hidden;
                     background-color: black;
                     font-family: 'Open Sans', sans-serif;
+                    color: white;
                     background-image: url("https://psntnick.github.io/img/shockHeader.jpg");
                     background-size: cover;
                     background-repeat: no-repeat;
-
                     white-space: nowrap; /* no ugly text wrapping if our screen is shrunk */
                 }
                 .mainMenuButton {
-                    color: white;
                     margin-right: 12px;
                     margin-left: 12px;
                     padding-bottom: 3px;
@@ -54,9 +53,15 @@
                     visibility: hidden;
                     font-size: 25px;
                     padding-right: 40px;
-                    color: white;
                 }
             
+            .bigCenter {
+                font-size: 40px;    
+            }
+            
+            a:link, a:visited, a:active {
+                color: white; /* make sure are links don't switch to funky colors */
+            }
             
             @media screen and (max-width: 68em) {
                 #hamburgerMenu {
@@ -66,6 +71,7 @@
                     visibility: hidden;
                 }
             }
+            
         </style>
     </head>
     <body>
@@ -75,6 +81,7 @@
             <a href="" class="mainMenuButton">Something else</a>
             <a id="hamburgerMenu">☰</a>
         </div>
+        <div id="showme">This text should be in front of the background image.</div>
 
     </body>
 </html>
