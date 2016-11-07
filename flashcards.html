@@ -35,6 +35,7 @@
                 font-size: 2em;
                 padding: 15%;
                 font-family: 'Open Sans', sans-serif;
+
             }
             .flippableElement.faceUp {
                 transform-style: preserve-3d;
@@ -106,8 +107,8 @@
     <body>
         
         <div class="notecard">
-            <div id="notecardQuestion" class="flippableElement">This application is not yet fully functional...</div>
-            <div id="notecardAnswer" class="flippableElement">...I'm working on it! (remember, this opened in a new window!)</div>
+            <div id="notecardQuestion" class="flippableElement faceUp">This application is not yet fully functional...</div>
+            <div id="notecardAnswer" class="flippableElement faceDown">...I'm working on it! (remember, this opened in a new window!)</div>
             <br> <br> <br> <br> <br> <br><br> <br> <br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
             <div id="notecardBottom">
                 <div class="menu-item">◀</div>
@@ -142,8 +143,7 @@
         
         
         document.addEventListener("DOMContentLoaded", function(event) {
-            console.log("dom loaded")
-            flip("notecardAnswer");
+
 
             document.getElementById("flipButton").addEventListener("click", function() {
                     //flip both the question and answer divs when the flip button is clicked
