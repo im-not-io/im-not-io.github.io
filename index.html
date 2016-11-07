@@ -13,6 +13,25 @@
             * {
                 overflow: hidden;
             }
+
+            #bodyDiv {
+                overflow: auto;
+                padding-top: 200px;
+                padding-left: 50px;
+                display: flex;
+                justify-content: flex-end;
+                margin: auto;
+                width: 100%;
+                
+                align-items: stretch;
+                flex-direction: column;
+            }
+            
+            .title {
+                font-size: 3.5em;    
+            }
+            
+
   
                 #menuBar {
                     position: absolute;
@@ -28,23 +47,27 @@
                     /* offset x, offset y, blur-radius, spread-radius, color */
                 }
                 body {
-                    display: flex;
                     margin: 0px;
                     overflow: hidden;
                     font-family: 'Open Sans', sans-serif;
                     color: white;
-                    background-color: white;
+                    background-color: black;
                     background-image: url("https://psntnick.github.io/img/shockHeader.jpg");
                     background-size: cover;
                     background-repeat: no-repeat;
                     white-space: nowrap; /* no ugly text wrapping if our screen is shrunk */
                 }
+            
+            a {
+                text-decoration: none;
+            }
+            
                 .mainMenuButton {
                     display: flex;
                     margin-right: 12px;
                     margin-left: 12px;
                     padding-bottom: 3px;
-                    text-decoration: none;
+
                     font-size: 20px;
                     border-bottom: 3px solid black; /* to prevent the links from "jumping" because of the new border */
                     transition: border-bottom 0.5s;
@@ -80,16 +103,23 @@
                 height: 90%;
             }
             
-            #dropdownMenu {
-                /* remove this */
-                position: absolute;
-                right: 46px; /* same as hamburger menu padding, minus a few pixels because the image has a border */
-                top: 50px; /* same as menu bar */
-                visibility: hidden;
-                z-index: 0;
-                background-color: red;
+            .aboutMeBox {
+                white-space: normal;
+                padding-top: 20px;
+                width: 40%;
             }
             
+            .aboutMeBox.visible {
+                opacity: 1;
+                transition: opacity 2s;
+
+            }
+            
+            .aboutMeBox.hidden {
+                opacity: 0;
+                transition: opacity 2s;
+            }
+  
             @media screen and (max-width: 68em) {
                 #menuBar {
                     flex-direction: column;
@@ -105,6 +135,7 @@
                     border: none;
                     transition: none;
                     padding: 0;
+                    padding-bottom: 10px;
                     padding-right: 11px; /*to match hamburgerMenu*/
                 }
                 
@@ -131,9 +162,7 @@
                     background-size: 68em auto;
                     background-size: 68em auto;
                 }
-                #dropdownMenu {
-                    visibility: visible;
-                }
+
             }
             
             
@@ -155,21 +184,25 @@
             }
 
         }
+            
+        function toggleAboutMeDescription() {
+            if (document.getElementById("aboutMeBox").className === "aboutMeBox visible") {
+                document.getElementById("aboutMeBox").className = "aboutMeBox hidden";
+            } else {
+                document.getElementById("aboutMeBox").className = "aboutMeBox visible";
+            }
+                        console.log(document.getElementById("aboutMeBox").className)
 
+        }
+            
 
-//            for (var x = 0; x < mainMenuButtons.length; ++x) {
-//                var display = window.getComputedStyle(mainMenuButtons[x]).display; //strangely element.style.display defaults to blank string
-//                if (display === "flex" || display === "") {
-//                    mainMenuButtons[x].style.display = "none";
-//                } else {
-//                    mainMenuButtons[x].style.display = "flex";
-//                }
-//            }
-     
         document.addEventListener("DOMContentLoaded", function(event) {
             document.getElementById("hamburgerMenu").addEventListener("click", function() {
                 showMenuButtons();
-            })
+            });
+            document.getElementById("learnMoreAboutMeLink").addEventListener("click", function() {
+                toggleAboutMeDescription();
+            });
         });
         </script>
         <div id="menuBar">
@@ -177,10 +210,13 @@
             <a href="https://psntnick.github.io" class="mainMenuButton selected">About me</a>
             <a href="flashcards.html" target="_blank" class="mainMenuButton">Flashcard</a>
             <a href="" class="mainMenuButton">Something else</a>
+            <a href="" class="mainMenuButton">Another button</a>
         </div>
-        
-        <div class="bigCenter">
-        <div>This text should be in front of the background image.</div>
+        <div id="bodyDiv">
+            <div class="title" id="nickTitle">Hi, I'm Nick.</div>
+            <a href="#" id="learnMoreAboutMeLink">▼ Learn more about me. </a>
+            <div class="aboutMeBox hidden" id="aboutMeBox">I'm passionate about using technology and the arts to positively impact people's lives. Some of my interests include watching YouTube content, listening to music, making music, coding, and fictional writing, among other many other things.<br><br>I don't really consider myself skilled in most areas, but if I had to chose, I have at least little skill in music performance/production and coding.<br><br>Aside from, that if you're reading this I hope you're having a great day!</div>
         </div>
+
     </body>
 </html>
