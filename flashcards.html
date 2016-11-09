@@ -113,7 +113,7 @@
             <div id="notecardAnswer" class="flippableElement faceDown">...I'm working on it! (remember, this opened in a new window!)</div>
             <br> <br> <br> <br> <br> <br><br> <br> <br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
             <div id="notecardBottom">
-                <div class="menu-item backButton" id="backButton">&#8629;</div>
+                <div class="menu-item backButton" id="backButton">×</div>
                 <div class="menu-item">&lt;</div>
                 <div class="menu-item" id="flipButton">Flip</div>
                 <div class="menu-item">&gt;</div>
@@ -169,7 +169,8 @@
                 });
             
             document.getElementById("backButton").addEventListener("click", function() {
-                window.history.back();
+                console.log("attempt");
+                window.close();
             });
         });
         
