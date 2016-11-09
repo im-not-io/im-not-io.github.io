@@ -20,8 +20,6 @@
                 padding-left: 50px;
                 display: flex;
                 align-self: flex-start;
-
-                width: 40%;
                 
                 align-items: stretch;
                 flex-direction: column;
@@ -41,9 +39,6 @@
                     align-items: center;
                     background-color: black;
                     width: 100%;
-                    padding-top: 9px;
-                    padding-bottom: 13px;
-                    
                     /* offset x, offset y, blur-radius, spread-radius, color */
                 }
                 body {
@@ -63,11 +58,10 @@
             }
             
                 .mainMenuButton {
+                    margin-bottom: 6px;
                     display: flex;
                     margin-right: 12px;
                     margin-left: 12px;
-                    padding-bottom: 3px;
-
                     font-size: 20px;
                     border-bottom: 3px solid black; /* to prevent the links from "jumping" because of the new border */
                     transition: border-bottom 0.5s;
@@ -82,10 +76,15 @@
                 }
 
                 #hamburgerMenu {
+                    margin-top: 10px;
+                    margin-bottom: 9px;
                     width: 30px;
                     visibility: hidden;
                     font-size: 25px;
                     padding-right: 20px;
+                    /*border: red 3px solid;*/
+                    height: 30px;
+                    width: 30px;
                 }
             
 
@@ -93,26 +92,23 @@
             a:link, a:visited, a:active {
                 color: white; /* make sure are links don't switch to funky colors */
             }
-            
-            #hamburgerMenu {
-                height: 90%;
-            }
-            
+
             .aboutMeBox {
+                padding-top: 15px;
                 white-space: normal;
-                padding-top: 20px;
-                width: 100%;
+                max-width: 500px;
+                padding-right: 20px;
             }
             
             .aboutMeBox.visible {
                 opacity: 1;
-                transition: opacity 2s;
+                transition: opacity 2.3s;
 
             }
             
             .aboutMeBox.hidden {
                 opacity: 0;
-                transition: opacity 2s;
+                transition: opacity 1.3s;
             }
   
             @media screen and (max-width: 68em) {
@@ -125,12 +121,30 @@
                     visibility: visible;
                 }
                 
+                #bodyDiv {
+                    padding-left: 20px;
+                    padding-top: 100px;
+
+
+                }
+                
+                
+                .title {
+                    font-size: 1.7em;
+                    overflow: visible;
+                }
+                
+                .aboutMeBox {
+                    font-size: .9em;
+                    max-width: 430px;
+                }
+
                 .mainMenuButton {
                     display: none;
                     border: none;
                     transition: none;
                     padding: 0;
-                    padding-bottom: 10px;
+                    padding-bottom: 6px;
                     padding-right: 11px; /*to match hamburgerMenu*/
                 }
                 
@@ -154,7 +168,6 @@
                 }
                 
                 body {
-                    background-size: 68em auto;
                     background-size: 68em auto;
                 }
 
