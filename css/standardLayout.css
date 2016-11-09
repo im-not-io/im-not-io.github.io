@@ -10,7 +10,13 @@
             
             .title {
                 font-size: 3.5em;    
+                
             }
+
+                .mainMenuButton.selected {
+                    border-bottom: 3px solid white;
+                }
+
             
 
   
@@ -47,10 +53,6 @@
                     font-size: 20px;
                     border-bottom: 3px solid black; /* to prevent the links from "jumping" because of the new border */
                     transition: border-bottom 0.5s;
-                }
-
-                .mainMenuButton.selected {
-                    border-bottom: 3px solid white;
                 }
 
                 .mainMenuButton:hover {
