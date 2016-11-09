@@ -1,0 +1,157 @@
+            #bodyDiv {
+                padding-top: 200px;
+                padding-left: 50px;
+                display: flex;
+                align-self: flex-start;
+                
+                align-items: stretch;
+                flex-direction: column;
+            }
+            
+            .title {
+                font-size: 3.5em;    
+            }
+            
+
+  
+                #menuBar {
+                    position: absolute;
+                    top: 0px;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    background-color: black;
+                    width: 100%;
+                    /* offset x, offset y, blur-radius, spread-radius, color */
+                }
+                body {
+                    margin: 0px;
+                    font-family: 'Open Sans', sans-serif;
+                    color: white;
+                    background-color: black;
+                    background-image: url("https://psntnick.github.io/img/shockHeader.jpg");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    white-space: nowrap; /* no ugly text wrapping if our screen is shrunk */
+                }
+            
+            a {
+                text-decoration: none;
+            }
+            
+                .mainMenuButton {
+                    margin-bottom: 6px;
+                    display: flex;
+                    margin-right: 12px;
+                    margin-left: 12px;
+                    font-size: 20px;
+                    border-bottom: 3px solid black; /* to prevent the links from "jumping" because of the new border */
+                    transition: border-bottom 0.5s;
+                }
+
+                .mainMenuButton.selected {
+                    border-bottom: 3px solid white;
+                }
+
+                .mainMenuButton:hover {
+                    border-bottom: 3px solid white;
+                }
+
+                #hamburgerMenu {
+                    margin-top: 10px;
+                    margin-bottom: 9px;
+                    width: 30px;
+                    visibility: hidden;
+                    font-size: 25px;
+                    padding-right: 20px;
+                    /*border: red 3px solid;*/
+                    height: 30px;
+                    width: 30px;
+                }
+            
+
+            
+            a:link, a:visited, a:active {
+                color: white; /* make sure are links don't switch to funky colors */
+            }
+
+            .aboutMeBox {
+                padding-top: 15px;
+                white-space: normal;
+                max-width: 500px;
+                padding-right: 20px;
+                padding-bottom: 40px;
+            }
+            
+            .aboutMeBox.visible {
+                opacity: 1;
+                transition: opacity 2.3s;
+
+            }
+            
+            .aboutMeBox.hidden {
+                opacity: 0;
+                transition: opacity 1.3s;
+            }
+  
+            @media screen and (max-width: 68em) {
+                #menuBar {
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items:flex-end;
+                }
+                #hamburgerMenu {
+                    visibility: visible;
+                }
+                
+                #bodyDiv {
+                    padding-left: 20px;
+                    padding-top: 100px;
+
+
+                }
+                
+                
+                .title {
+                    font-size: 1.7em;
+                    overflow: visible;
+                }
+                
+                .aboutMeBox {
+                    font-size: .9em;
+                    max-width: 430px;
+                }
+
+                .mainMenuButton {
+                    display: none;
+                    border: none;
+                    transition: none;
+                    padding: 0;
+                    padding-bottom: 6px;
+                    padding-right: 11px; /*to match hamburgerMenu*/
+                }
+                
+                .mainMenuButton.selected {
+                    border: none;
+                    transition: none;
+                    
+                }
+                
+                .mainMenuButton.visible, .mainMenuButton.selected.visible {
+                    display: none;    
+                }
+                
+                .mainMenuButton.hidden, mainMenuButton.selected.hidden {
+                    display: flex;    
+                }
+                
+                .mainMenuButton:hover {
+                    border: none;
+                    transition: none;
+                }
+                
+                body {
+                    background-size: 68em auto;
+                }
+
+            }

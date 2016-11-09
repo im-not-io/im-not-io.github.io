@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Informatics 133: Midterm project web page">
+        <meta name="author" content="Nicholas Joseph DiGeronimo">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Midterm project</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <!--MOVE TO EXTERNAL FILE-->
+        <style>
+            
+            #bodyDiv {
+                padding-top: 200px;
+                padding-left: 50px;
+                display: flex;
+                align-self: flex-start;
+                
+                align-items: stretch;
+                flex-direction: column;
+            }
+            
+            .title {
+                font-size: 3.5em;    
+            }
+            
+
+  
+                #menuBar {
+                    position: absolute;
+                    top: 0px;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    background-color: black;
+                    width: 100%;
+                    /* offset x, offset y, blur-radius, spread-radius, color */
+                }
+                body {
+                    margin: 0px;
+                    font-family: 'Open Sans', sans-serif;
+                    color: white;
+                    background-color: black;
+                    background-image: url("https://psntnick.github.io/img/shockHeader.jpg");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    white-space: nowrap; /* no ugly text wrapping if our screen is shrunk */
+                }
+            
+            a {
+                text-decoration: none;
+            }
+            
+                .mainMenuButton {
+                    margin-bottom: 6px;
+                    display: flex;
+                    margin-right: 12px;
+                    margin-left: 12px;
+                    font-size: 20px;
+                    border-bottom: 3px solid black; /* to prevent the links from "jumping" because of the new border */
+                    transition: border-bottom 0.5s;
+                }
+
+                .mainMenuButton.selected {
+                    border-bottom: 3px solid white;
+                }
+
+                .mainMenuButton:hover {
+                    border-bottom: 3px solid white;
+                }
+
+                #hamburgerMenu {
+                    margin-top: 10px;
+                    margin-bottom: 9px;
+                    width: 30px;
+                    visibility: hidden;
+                    font-size: 25px;
+                    padding-right: 20px;
+                    /*border: red 3px solid;*/
+                    height: 30px;
+                    width: 30px;
+                }
+            
+
+            
+            a:link, a:visited, a:active {
+                color: white; /* make sure are links don't switch to funky colors */
+            }
+
+            .aboutMeBox {
+                padding-top: 15px;
+                white-space: normal;
+                max-width: 500px;
+                padding-right: 20px;
+                padding-bottom: 40px;
+            }
+            
+            .aboutMeBox.visible {
+                opacity: 1;
+                transition: opacity 2.3s;
+
+            }
+            
+            .aboutMeBox.hidden {
+                opacity: 0;
+                transition: opacity 1.3s;
+            }
+  
+            @media screen and (max-width: 68em) {
+                #menuBar {
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items:flex-end;
+                }
+                #hamburgerMenu {
+                    visibility: visible;
+                }
+                
+                #bodyDiv {
+                    padding-left: 20px;
+                    padding-top: 100px;
+
+
+                }
+                
+                
+                .title {
+                    font-size: 1.7em;
+                    overflow: visible;
+                }
+                
+                .aboutMeBox {
+                    font-size: .9em;
+                    max-width: 430px;
+                }
+
+                .mainMenuButton {
+                    display: none;
+                    border: none;
+                    transition: none;
+                    padding: 0;
+                    padding-bottom: 6px;
+                    padding-right: 11px; /*to match hamburgerMenu*/
+                }
+                
+                .mainMenuButton.selected {
+                    border: none;
+                    transition: none;
+                    
+                }
+                
+                .mainMenuButton.visible, .mainMenuButton.selected.visible {
+                    display: none;    
+                }
+                
+                .mainMenuButton.hidden, mainMenuButton.selected.hidden {
+                    display: flex;    
+                }
+                
+                .mainMenuButton:hover {
+                    border: none;
+                    transition: none;
+                }
+                
+                body {
+                    background-size: 68em auto;
+                }
+
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <script>
+        function showMenuButtons() {
+            var mainMenuButtons = document.getElementsByClassName("mainMenuButton");
+            
+            for (var x = 0; x < mainMenuButtons.length; ++x) {
+                if (mainMenuButtons[x].classList.contains("hidden")) {
+                    mainMenuButtons[x].classList.remove("hidden")
+                    mainMenuButtons[x].classList.add("visible")
+                } else {
+                    mainMenuButtons[x].classList.remove("visible")
+                    mainMenuButtons[x].classList.add("hidden")
+                }
+            }
+
+        }
+            
+        function toggleAboutMeDescription() {
+            if (document.getElementById("aboutMeBox").className === "aboutMeBox visible") {
+                document.getElementById("aboutMeBox").className = "aboutMeBox hidden";
+            } else {
+                document.getElementById("aboutMeBox").className = "aboutMeBox visible";
+            }
+                        console.log(document.getElementById("aboutMeBox").className)
+
+        }
+            
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.getElementById("hamburgerMenu").addEventListener("click", function() {
+                showMenuButtons();
+            });
+            document.getElementById("learnMoreAboutMeLink").addEventListener("click", function() {
+                toggleAboutMeDescription();
+            });
+        });
+        </script>
+        <div id="menuBar">
+            <img src="https://psntnick.github.io/img/cheeseburgerMenu.png" id="hamburgerMenu">
+            <a href="https://psntnick.github.io" class="mainMenuButton selected">About me</a>
+            <a href="flashcards.html" class="mainMenuButton" target="_blank">↸ Flashcard</a> <!-- &#65038; to force unicode emoji to text -->
+            <a href="" class="mainMenuButton">Contact</a>
+        </div>
+        <div id="bodyDiv">
+            <div class="title" id="nickTitle">Hi, I'm Nick.</div>
+            <a href="#" id="learnMoreAboutMeLink">▼ Learn more about me. </a>
+            <div class="aboutMeBox hidden" id="aboutMeBox">I'm passionate about using technology and the arts to positively impact people's lives. Some of my interests include watching YouTube content, listening to music, making music, coding, and fictional writing, among other many other things.<br><br>I don't really consider myself skilled in most areas, but if I had to chose, I have at least little skill in music performance/production and coding.<br><br>If you're curious this is not a random picture! I actually took this picture at a UCI event!<br><br>Aside from, that if you're reading this I hope you're having a great day!</div>
+        </div>
+
+    </body>
+</html>
