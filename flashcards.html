@@ -15,7 +15,7 @@
             .notecard {
                 width: 100%;
                 clip-path: circle(30px at 35px 35px);
-
+                
             }
 
             .flippableElement {
@@ -28,7 +28,7 @@
                 box-shadow: 0px 0px 10px 0px silver, inset 0 0 20px 10px silver; /* x-offset y-offset blur-radius spread-radius color */
                 transition: transform 2s;
                 backface-visibility: hidden;
-                justify-content: center;
+                justify-content: space-around;
                 align-items: center;
                 box-sizing: border-box; /* automatically factor in padding when calculating width size */
                 cursor: pointer;
@@ -49,6 +49,7 @@
             
 
             #notecardBottom {
+                overflow: hidden;
                 position: absolute;
                 bottom: 5px;
                 display: flex;
@@ -65,16 +66,9 @@
             body {
                 margin: 0;
             }
-            .menu-option {
-                border-left: 2px solid white; 
-                border-right: 2px solid white;
-                color: white;
-                height: 100%;
-            }
             
-            #notecardBottom div:first-child {
+            #notecardBottom div:nth-child(2) {
                 border-left: 2px solid hsl(0, 0%, 80%);
-
             }
             
             .menu-item {
@@ -85,17 +79,25 @@
                 margin: 0px;
                 text-decoration: none;
                 color: #787C7D;
-                vertical-align:middle;
                 border-right: 2px solid hsl(0, 0%, 80%);
                 padding-left: 5%;
                 padding-right: 5%;
                 text-shadow: 0 1px 0 white;
                 transition: background-color .7s, box-shadow .7s;
                 cursor: pointer;
-                
+       
             }
             .menu-item:hover {
                 background-color: hsla(0, 0%, 50%, .2);
+            }
+            
+            .menu-item.backButton {
+                position: absolute;
+                left: 0px;
+                height: 100%;
+                padding-right: 1.5%;
+                padding-left: 1.5%;
+                font-size: 2.5em;
             }
             
 
@@ -111,9 +113,10 @@
             <div id="notecardAnswer" class="flippableElement faceDown">...I'm working on it! (remember, this opened in a new window!)</div>
             <br> <br> <br> <br> <br> <br><br> <br> <br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
             <div id="notecardBottom">
-                <div class="menu-item">◀</div>
+                <div class="menu-item backButton" id="backButton">&#8629;</div>
+                <div class="menu-item">&lt;</div>
                 <div class="menu-item" id="flipButton">Flip</div>
-                <div class="menu-item">▶</div>
+                <div class="menu-item">&gt;</div>
             </div>
             
             
@@ -121,6 +124,7 @@
         
     <script>
         
+
                 function flip(id) {
             var flippableElement = document.getElementById(id);
             switch (flippableElement.className) {
@@ -163,6 +167,10 @@
                     flip("notecardQuestion");
                     flip("notecardAnswer");
                 });
+            
+            document.getElementById("backButton").addEventListener("click", function() {
+                window.history.back();
+            });
         });
         
 
