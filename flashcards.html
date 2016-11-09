@@ -12,6 +12,7 @@
         <!--MOVE TO EXTERNAL FILE-->
         <style>
             
+
             .notecard {
                 width: 100%;
                 clip-path: circle(30px at 35px 35px);
@@ -87,9 +88,8 @@
                 cursor: pointer;
        
             }
-            .menu-item:hover {
-                background-color: hsla(0, 0%, 50%, .2);
-            }
+            
+
             
             .menu-item.backButton {
                 position: absolute;
@@ -100,7 +100,17 @@
                 font-size: 2.5em;
             }
             
-
+            @media screen and (min-width: 68.0000001em) {
+                .menu-item:hover {
+                    background-color: hsla(0, 0%, 50%, .2);
+                }
+            }
+            
+            @media screen and (max-width: 68em) {
+                .menu-item:hover {
+                    background-color: none;
+                }
+            }
 
       
             
