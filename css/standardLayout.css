@@ -132,11 +132,14 @@
                 
                 #bodyDiv {
                     padding-left: 20px;
-                    padding-top: 100px;
-
+                    padding-top: 70px;
 
                 }
                 
+                
+                body {
+                    font-size: .85em;
+                }
                 
   
                 .mainContentBox {

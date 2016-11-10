@@ -7,13 +7,13 @@ function toggleAboutMeDescription() {
                         console.log(document.getElementById("mainContentBox").className)
 
         }
-            
-            //work please
+  
         document.addEventListener("DOMContentLoaded", function(event) {
-            document.getElementById("hamburgerMenu").addEventListener("click", function() {
-                showMenuButtons();
-            });
+
             document.getElementById("learnMoreAboutMeLink").addEventListener("click", function() {
                 toggleAboutMeDescription();
             });
         });
+
+
+

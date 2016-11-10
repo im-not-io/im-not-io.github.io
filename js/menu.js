@@ -12,3 +12,11 @@
             }
 
         }
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+
+            document.getElementById("hamburgerMenu").addEventListener("click", function() {
+                showMenuButtons();
+            });
+
+        });
