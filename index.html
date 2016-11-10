@@ -7,55 +7,21 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>Midterm project</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/css/standardLayout.css">
+        <link rel="stylesheet" type="text/css" href="css/standardLayout.css">
     </head>
     <body>
-        <script>
-        function showMenuButtons() {
-            var mainMenuButtons = document.getElementsByClassName("mainMenuButton");
-            
-            for (var x = 0; x < mainMenuButtons.length; ++x) {
-                if (mainMenuButtons[x].classList.contains("hidden")) {
-                    mainMenuButtons[x].classList.remove("hidden")
-                    mainMenuButtons[x].classList.add("visible")
-                } else {
-                    mainMenuButtons[x].classList.remove("visible")
-                    mainMenuButtons[x].classList.add("hidden")
-                }
-            }
-
-        }
-            
-        function toggleAboutMeDescription() {
-            if (document.getElementById("aboutMeBox").className === "aboutMeBox visible") {
-                document.getElementById("aboutMeBox").className = "aboutMeBox hidden";
-            } else {
-                document.getElementById("aboutMeBox").className = "aboutMeBox visible";
-            }
-                        console.log(document.getElementById("aboutMeBox").className)
-
-        }
-            
-            //work please
-        document.addEventListener("DOMContentLoaded", function(event) {
-            document.getElementById("hamburgerMenu").addEventListener("click", function() {
-                showMenuButtons();
-            });
-            document.getElementById("learnMoreAboutMeLink").addEventListener("click", function() {
-                toggleAboutMeDescription();
-            });
-        });
-        </script>
+        <script src="js/menu.js"></script>
+        <script src="js/aboutMe.js"></script>
         <div id="menuBar">
-            <img src="https://psntnick.github.io/img/cheeseburgerMenu.png" id="hamburgerMenu">
-            <a href="https://psntnick.github.io" class="mainMenuButton selected">About me</a>
+            <img src="img/cheeseburgerMenu.png" id="hamburgerMenu">
+            <a href="./" class="mainMenuButton selected">About me</a>
             <a href="flashcards.html" class="mainMenuButton" target="_blank">↸ Flashcard</a> <!-- &#65038; to force unicode emoji to text -->
             <a href="contact.html" class="mainMenuButton">Contact</a>
         </div>
         <div id="bodyDiv">
-            <div class="title" id="nickTitle">Hi, I'm Nick.</div>
+            <h1>Hi, I'm Nick.</h1>
             <a href="#" id="learnMoreAboutMeLink">▼ Learn more about me. </a>
-            <div class="aboutMeBox hidden" id="aboutMeBox">I'm passionate about using technology and the arts to positively impact people's lives. Some of my interests include watching YouTube content, listening to music, making music, coding, and fictional writing, among other many other things.<br><br>I don't really consider myself skilled in most areas, but if I had to chose, I have at least little skill in music performance/production and coding.<br><br>If you're curious this is not a random picture! I actually took this picture at a UCI event!<br><br>Aside from, that if you're reading this I hope you're having a great day!</div>
+            <div class="mainContentBox hidden" id="mainContentBox">I'm passionate about using technology and the arts to positively impact people's lives. Some of my interests include watching YouTube content, listening to music, making music, coding, and fictional writing, among other many other things.<br><br>I don't really consider myself skilled in most areas, but if I had to chose, I have at least little skill in music performance/production and coding.<br><br>If you're curious this is not a random picture! I actually took this picture at a UCI event!<br><br>Aside from, that if you're reading this I hope you're having a great day!</div>
         </div>
 
     </body>

@@ -8,191 +8,20 @@
         <title>Midterm project</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <title>Midterm project</title>
-        
-        <!--MOVE TO EXTERNAL FILE-->
-        <style>
-            
-
-            .notecard {
-                width: 100%;
-                clip-path: circle(30px at 35px 35px);
-                
-            }
-
-            .flippableElement {
-                position: absolute;
-                display: flex;
-                width: 100%;
-                height: 95%;
-                top: 0px;
-                left: 0px;
-                box-shadow: 0px 0px 10px 0px silver, inset 0 0 20px 10px silver; /* x-offset y-offset blur-radius spread-radius color */
-                transition: transform 2s;
-                backface-visibility: hidden;
-                justify-content: space-around;
-                align-items: center;
-                box-sizing: border-box; /* automatically factor in padding when calculating width size */
-                cursor: pointer;
-                font-size: 2em;
-                padding: 15%;
-                font-family: 'Open Sans', sans-serif;
-
-            }
-            .flippableElement.faceUp {
-                transform-style: preserve-3d;
-                transform: rotateY(0deg);
-
-            }
-            .flippableElement.faceDown {
-                transform-style: preserve-3d;
-                transform: rotateY(180deg);
-            }
-            
-
-            #notecardBottom {
-                overflow: hidden;
-                position: absolute;
-                bottom: 0px;
-                display: flex;
-                width: 100%;
-                height: 80px;
-                margin: auto;
-                justify-content: center;
-                background: linear-gradient(to bottom, hsl(0, 0%, 97%) 10%, hsl(0, 0%, 91%) 100%);
-                /* border: solid 10px blue; */
-               /* box-shadow: 0px -20px 10px 0px blue;*/
-                                box-shadow: 0px 0px 10px 0px gray; //x-offset y-offset blur-radius spread-radius color;
-                z-index: 2;
-            }
-            body {
-                margin: 0;
-            }
-            
-            #notecardBottom div:nth-child(2) {
-                border-left: 2px solid hsl(0, 0%, 80%);
-            }
-            
-            .menu-item {
-                font-family: Tahoma, Geneva, sans-serif;
-                font-size: 30px;
-                display : flex;
-                align-items : center;
-                margin: 0px;
-                text-decoration: none;
-                color: #787C7D;
-                border-right: 2px solid hsl(0, 0%, 80%);
-                padding-left: 5%;
-                padding-right: 5%;
-                text-shadow: 0 1px 0 white;
-                transition: background-color .7s, box-shadow .7s;
-                cursor: pointer;
-       
-            }
-            
-
-            
-            .menu-item.closeButton {
-                position: absolute;
-                left: 0px;
-                height: 100%;
-                padding-right: 3%;
-                padding-left: 3%;
-                font-size: 2.5em;
-            }
-            
-            @media screen and (min-width: 68.0000001em) {
-                /* hover only on regular-sized screens*/
-                .menu-item:hover {
-                    background-color: hsla(0, 0%, 50%, .2);
-                }
-            }
-            
-            @media screen and (max-width: 68em) {
-                .menu-item:hover {
-                    /* disable hover on mobile devices, since they can't really hover (sometimes it looks weird)*/
-                    background-color: none;
-                }
-            }
-
-      
-            
-        </style>
+        <link rel="stylesheet" type="text/css" href="css/flashcards.css">
     </head>
     <body>
-        
         <div class="notecard">
             <div id="notecardQuestion" class="flippableElement faceUp">This application is not yet fully functional...</div>
             <div id="notecardAnswer" class="flippableElement faceDown">...I'm working on it! (remember, this opened in a new window!)</div>
-            <br> <br> <br> <br> <br> <br><br> <br> <br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
             <div id="notecardBottom">
                 <div class="menu-item closeButton" id="closeButton">×</div>
                 <div class="menu-item">&lt;</div>
                 <div class="menu-item" id="flipButton">Flip</div>
                 <div class="menu-item">&gt;</div>
             </div>
-            
-            
         </div>
         
-    <script>
-        
-
-                function flip(id) {
-            var flippableElement = document.getElementById(id);
-            switch (flippableElement.className) {
-                case "flippableElement": 
-                    //initial look (never been flipped by user)
-                    flippableElement.className = "flippableElement faceDown";
-                    break;
-                case "flippableElement faceDown":
-                    flippableElement.className = "flippableElement faceUp";
-                    break;
-                case "flippableElement faceUp":
-                    flippableElement.className = "flippableElement faceDown";
-                    break;
-                default:
-                    throw "flippableElement not detected."     
-            }
-    console.log("id: " + id + " " + flippableElement.className);
-
-        }
-        
-        
-        document.addEventListener("DOMContentLoaded", function(event) {
-
-
-            document.getElementById("flipButton").addEventListener("click", function() {
-                    //flip both the question and answer divs when the flip button is clicked
-                    console.log("flip attempt")
-                    flip("notecardQuestion");
-                    flip("notecardAnswer");
-
-                });
-            document.getElementById("notecardQuestion").addEventListener("click", function() {
-                    //flip both the question and answer divs when the notecard is clicked
-                    flip("notecardQuestion");
-                    flip("notecardAnswer");
-                });
-            document.getElementById("notecardAnswer").addEventListener("click", function() {
-                    //flip both the question and answer divs when the notecard
-                    //this is added since I don't have useCapture for addEventListener set to true
-                    flip("notecardQuestion");
-                    flip("notecardAnswer");
-                });
-            
-            document.getElementById("closeButton").addEventListener("click", function() {
-                console.log("attempt");
-                window.close();
-            });
-        });
-        
-
-
-    </script>
+    <script src="js/flashcards.js"></script>
     </body>
 </html>
-
-<!--
-Your HTML files must have proper structure including a <html>, <head>, and <body> tags, a proper title, author meta tag, links to external CSS or JavaScript, and utilize semantic HTML5 tags (doesnt need to be all of them, but try to use them where appropriate).
-Your folder structure must have a directory called "css" where your external css file is and a "js" folder with your external JavaScript file(s). All images must be placed in a directory called "img". You just use "relative URLs" for pointing to your css, JS and image files. All html files must be in the root directory.
--->

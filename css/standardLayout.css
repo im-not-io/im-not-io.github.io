@@ -10,14 +10,38 @@
             
             .title {
                 font-size: 3.5em;    
+
+            }
+
+              h1 {
+                    font-size: 3em;
+                    margin: 0px;
+                }
                 
+
+            input, textarea {
+                width: 100%;
+                outline: none; /* no ugly chrome outlines */
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            textarea {
+                height: 100px;
             }
 
                 .mainMenuButton.selected {
                     border-bottom: 3px solid white;
                 }
+                
+                .contentLine {
+                    display: flex;
+                    margin-bottom: 10px;
+                    margin-top: 3px;
+                  align-items: center;
 
-            
+                }
+
+
 
   
                 #menuBar {
@@ -77,7 +101,7 @@
                 color: white; /* make sure are links don't switch to funky colors */
             }
 
-            .aboutMeBox {
+            .mainContentBox {
                 padding-top: 15px;
                 white-space: normal;
                 max-width: 500px;
@@ -85,13 +109,13 @@
                 padding-bottom: 40px;
             }
             
-            .aboutMeBox.visible {
+            .mainContentBox.visible {
                 opacity: 1;
                 transition: opacity 2.3s;
 
             }
             
-            .aboutMeBox.hidden {
+            .mainContentBox.hidden {
                 opacity: 0;
                 transition: opacity 1.3s;
             }
@@ -114,12 +138,8 @@
                 }
                 
                 
-                .title {
-                    font-size: 1.7em;
-                    overflow: visible;
-                }
-                
-                .aboutMeBox {
+  
+                .mainContentBox {
                     font-size: .9em;
                     max-width: 430px;
                 }
