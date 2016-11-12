@@ -1,4 +1,4 @@
-            #bodyDiv {
+            section {
                 padding-top: 200px;
                 padding-left: 50px;
                 display: flex;
@@ -74,7 +74,7 @@
                     display: flex;
                     margin-right: 12px;
                     margin-left: 12px;
-                    font-size: 20px;
+                    font-size: 1.25em;
                     border-bottom: 3px solid black; /* to prevent the links from "jumping" because of the new border */
                     transition: border-bottom 0.5s;
                 }
@@ -120,7 +120,8 @@
                 transition: opacity 1.3s;
             }
   
-            @media screen and (max-width: 68em) {
+            @media screen and (max-width: 60em) {
+                /* this media query tries to target tablets */
                 #menuBar {
                     flex-direction: column;
                     justify-content: flex-end;
@@ -130,7 +131,7 @@
                     visibility: visible;
                 }
                 
-                #bodyDiv {
+                section {
                     padding-left: 20px;
                     padding-top: 90px;
 
@@ -175,4 +176,11 @@
                     background-size: 68em auto;
                 }
 
+            }
+
+            @media screen and (max-width: 30em) {
+                                /* this media query tries to target mobile phones */
+                body {
+                    font-size: .9em
+                }
             }
