@@ -1,16 +1,12 @@
         function showMenuButtons() {
             var mainMenuButtons = document.getElementsByClassName("mainMenuButton");
-            
-            for (var x = 0; x < mainMenuButtons.length; ++x) {
-                if (mainMenuButtons[x].classList.contains("hidden")) {
-                    mainMenuButtons[x].classList.remove("hidden")
-                    mainMenuButtons[x].classList.add("visible")
-                } else {
-                    mainMenuButtons[x].classList.remove("visible")
-                    mainMenuButtons[x].classList.add("hidden")
-                }
+            var menuBarClassName = document.getElementById("menuBar").className;
+            if (menuBarClassName === "" || menuBarClassName === "slideUp") {
+                document.getElementById("menuBar").className = "slideDown";
+            } else {
+                document.getElementById("menuBar").className = "slideUp";
             }
-
+            console.log(document.getElementById("menuBar").className);
         }
 
         document.addEventListener("DOMContentLoaded", function(event) {
