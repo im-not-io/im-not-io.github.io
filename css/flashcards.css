@@ -43,7 +43,7 @@
                 height: 80px;
                 margin: auto;
                 justify-content: center;
-                background: linear-gradient(to bottom, hsl(0, 0%, 97%) 10%, hsl(0, 0%, 91%) 100%);
+                background-color: black;
                 /* border: solid 10px blue; */
                /* box-shadow: 0px -20px 10px 0px blue;*/
                                 box-shadow: 0px 0px 10px 0px gray; //x-offset y-offset blur-radius spread-radius color;
@@ -64,11 +64,10 @@
                 align-items : center;
                 margin: 0px;
                 text-decoration: none;
-                color: #787C7D;
+                color: white;
                 border-right: 2px solid hsl(0, 0%, 80%);
                 padding-left: 3%;
                 padding-right: 3%;
-                text-shadow: 0 1px 0 white;
                 transition: background-color .7s, box-shadow .7s;
                 cursor: pointer;
        
