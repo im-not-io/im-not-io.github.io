@@ -61,7 +61,6 @@ section {
                     align-items: center;
                     background-color: rgba(0, 0, 0, 0);
                     width: 100%;
-                    transition: background-color 1s;
                     /* offset x, offset y, blur-radius, spread-radius, color */
                 }
                 
@@ -82,12 +81,14 @@ section {
                 }
 
                 body.loadBackgroundImages {
-                    background-image:url("../img/airportTerminalHeader.jpg");
-                                    /*url("../img/palmsHeader.jpg"),
+                    background-image:url("../img/airportTerminalHeader.jpg"),
+                                    url("../img/boatWaitingHeader.jpg"),
+                                    url("../img/palmsHeader.jpg"),
                                     url("../img/runwayHeader.jpg"),
                                     url("../img/santaMonicaHeader.jpg"),
                                     url("../img/SFWindowHeader.jpg"),
-                                    url("../img/shockHeader.jpg"),*/
+                                    url("../img/shockHeader.jpg"),
+                                    url("../img/sunsetSiloHeader.jpg")
                 }
 
 
