@@ -8,7 +8,7 @@ function toggleAboutMeDescription() {
             }
         }
             window.addEventListener("load", function(anotherEvent) { 
-                var dir = "file:///C:/Users/Nick/Desktop/UCI%20Fall%202016%20Quarter/INF%20133/MidtermProjectIN4MATX133/LiveInternetIN4MATX133Files/psntnick.github.io";
+                var dir = "https://psntnick.github.io";
                                 var imageProperties = [
                                     'url("' + dir + '/img/airportTerminalHeader.jpg")',
                                     'url("' + dir + '/img/boatWaitingHeader.jpg")',
