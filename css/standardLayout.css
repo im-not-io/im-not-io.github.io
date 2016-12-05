@@ -164,7 +164,7 @@ section {
     border: solid 4px white;
     border-left: solid 20px white;
     border-radius: 10px;
-
+    align-self: flex-end;
 
 }
 
@@ -174,10 +174,7 @@ section {
                 
                 /* this media query tries to target tablets */
                 
-                .psntLogo {
-                    position: relative;
-                    top: 147px;
-                }
+
                 #menuBar {
                     top: -150px;
                     flex-direction: column;
@@ -218,6 +215,7 @@ section {
                 .mainMenuButton {
                     transition: none;
                     padding: 0;
+                    border: none;
                     padding-bottom: 3px;
                     padding-right: 11px; /*to match hamburgerMenu*/
                 }
