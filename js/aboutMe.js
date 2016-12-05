@@ -6,9 +6,11 @@ function toggleAboutMeDescription() {
             } else {
                 document.getElementById("mainContentBox").className = "mainContentBox visible";
             }
+
         }
-            window.addEventListener("load", function(anotherEvent) { 
-                var dir = "https://psntnick.github.io";
+
+
+ var dir = "https://psntnick.github.io";
                                 var imageProperties = [
                                     'url("' + dir + '/img/airportTerminalHeader.jpg")',
                                     'url("' + dir + '/img/boatWaitingHeader.jpg")',
@@ -22,6 +24,9 @@ function toggleAboutMeDescription() {
                 document.body.style.backgroundImage = imageProperties[Math.floor(Math.random() * imageProperties.length)];
                 console.log(imageProperties[0]);
                 console.log(document.body.style.backgroundImage);
+            window.addEventListener("load", function(anotherEvent) {
+                console.log("load fired");
+               
             window.addEventListener("keydown", function(event) {
 
                 if (event.keyCode == 32) {

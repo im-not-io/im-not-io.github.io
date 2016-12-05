@@ -53,9 +53,7 @@
                 margin: 0;
             }
             
-            #notecardBottom div:nth-child(2) {
-                border-left: 2px solid hsl(0, 0%, 80%);
-            }
+
             
             .menu-item {
                 font-family: Tahoma, Geneva, sans-serif;
@@ -65,22 +63,25 @@
                 margin: 0px;
                 text-decoration: none;
                 color: white;
-                border-right: 2px solid hsl(0, 0%, 80%);
-                padding-left: 3%;
-                padding-right: 3%;
+                padding-left: 2%;
+                padding-right: 2%;
+                margin: .5%;
                 transition: background-color .7s, box-shadow .7s;
                 cursor: pointer;
+                /*border: solid 2px white;*/
+                border-radius: 10px;
        
             }
-            
+
+   
 
             
             .menu-item.closeButton {
                 position: absolute;
                 left: 0px;
-                height: 100%;
-                padding-right: 3%;
-                padding-left: 3%;
+                height: 80%;
+                padding-right: 2%;
+                padding-left: 2%;
                 font-size: 2.5em;
             }
             
