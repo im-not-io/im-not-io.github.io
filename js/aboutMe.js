@@ -1,13 +1,6 @@
 var currentIndex = 0;
 
-function toggleAboutMeDescription() {
-            if (document.getElementById("mainContentBox").className === "mainContentBox visible") {
-                document.getElementById("mainContentBox").className = "mainContentBox hidden";
-            } else {
-                document.getElementById("mainContentBox").className = "mainContentBox visible";
-            }
 
-        }
 
             window.addEventListener("DOMContentLoaded", function(event) {
  var dir = "https://psntnick.github.io";
@@ -29,7 +22,4 @@ function toggleAboutMeDescription() {
                 console.log("load fired");
                
 
-            document.getElementById("learnMoreAboutMeLink").addEventListener("click", function() {
-                toggleAboutMeDescription();
-            });
         });
