@@ -9,7 +9,7 @@ function toggleAboutMeDescription() {
 
         }
 
-
+            window.addEventListener("DOMContentLoaded", function(event) {
  var dir = "https://psntnick.github.io";
                                 var imageProperties = [
                                     'url("' + dir + '/img/airportTerminalHeader.jpg")',
@@ -21,9 +21,10 @@ function toggleAboutMeDescription() {
                                     'url("' + dir + '/img/shockHeader.jpg")',
                                    'url("' + dir + '/img/sunsetSiloHeader.jpg")'
                                 ];
-                document.body.style.backgroundImage = imageProperties[Math.floor(Math.random() * imageProperties.length)];
+                document.querySelector(".backgroundImage").style.backgroundImage = imageProperties[Math.floor(Math.random() * imageProperties.length)];
                 console.log(imageProperties[0]);
                 console.log(document.body.style.backgroundImage);
+            });
             window.addEventListener("load", function(anotherEvent) {
                 console.log("load fired");
                
