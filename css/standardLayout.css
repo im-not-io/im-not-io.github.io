@@ -3,7 +3,7 @@
 }
 
 
-                    
+           
 section {
                 padding-top: 200px;
                 padding-left: 50px;
@@ -23,11 +23,12 @@ section {
                     font-size: 3em;
                     margin: 0px;
                     /*text-shadow: 1px 1px 3px #565656;*/
-                  background-color: rgba(0, 0, 0, 0.5);
+                  background-color: rgba(0, 0, 0, 0.8);
                 }
 
                 #learnMoreAboutMeLink {
                     margin: 0px;
+                    background-color: rgba(0, 0, 0, 0.8);
                 }
                 
 
@@ -42,7 +43,9 @@ section {
             }
 
                 .mainMenuButton.selected {
-                    border-bottom: 3px solid white;
+                    border: 3px solid white;
+                    box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+                    border-radius: 10px;
                 }
                 /*
                 .contentLine {
@@ -67,7 +70,7 @@ section {
                     background-color: rgba(0, 0, 0, 0);
                     width: 100%;
                     height: 40px;
-                                        
+                    padding-bottom: 5px;
                     /* offset x, offset y, blur-radius, spread-radius, color */
                 }
                 
@@ -81,10 +84,10 @@ section {
                     background-color: black;
                     background-size: cover;
                     background-repeat: no-repeat;
-                    overflow: hidden;
                     background-clip: content-box;
                     /*white-space: nowrap;  no ugly text wrapping if our screen is shrunk */
                     background-image: none;
+                        text-shadow: 2px 2px 10px rgba(0,0,0,.7);
                 }
 
                 body.loadBackgroundImages {
@@ -110,12 +113,11 @@ section {
                     margin-right: 12px;
                     margin-left: 12px;
                     font-size: 1.25em;
-                    transition: border-bottom 0.5s, font-size 0.5s;
-                     border-bottom: 3px solid rgba(0, 0, 0, 0);
+                    transition: font-size 0.5s;
+                    padding: 2px;
                 }
 
                 .mainMenuButton:hover {
-                    border-bottom: 3px solid white;
                     font-size: 1.4em;
                 }
 
@@ -140,9 +142,10 @@ section {
             .mainContentBox {
                 padding-top: 15px;
                 white-space: normal;
-                max-width: 500px;
                 padding-right: 20px;
                 padding-bottom: 40px;
+                background-color: rgba(255,255,255,.5);
+                width: 500px;
             }
             
             .mainContentBox.visible {
@@ -160,7 +163,7 @@ section {
 .psntLogo {
     display: flex;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: 1%;
     font-size: 1.5em;
     border: solid 4px white;
     border-left: solid 20px white;
@@ -168,31 +171,54 @@ section {
     align-self: flex-end;
 }
 
+.downArrow {
+    display: flex;
+    position: absolute;
+    width: fit-content;
+    bottom: 0px;
+    font-size: 4em;
+    width: 100%;
+    justify-content: center;
+    
+    animation-name: downArrowMove;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 3s;
+}
 
+@keyframes downArrowMove {
+    0%   {transform: translate(0px, 0px) scale(1,1)}
+    5% {transform: translate(0px, -50px) scale(1.4,1.4);}
+    10% {transform: translate(0px, 100px) scale(1,1)}
+    15%   {transform: translate(0px, 0px) scale(1,1)}
+}
   
             @media screen and (max-width: 60em) {
                 
                 /* this media query tries to target tablets */
+                
                 .psntLogo {
                     position: relative;
-                    top: 133px;
+                    top: 180px;
                 }
 
                 #menuBar {
-                    top: -155px;
+                    min-width: 190px;
+                    top: -247px;
                     flex-direction: column;
                     justify-content: flex-end;
                     align-items:flex-end;
                     background-color: black;
-                    height: 200px;
+                    height: 290px;
                     transition: transform 1s;
                     overflow: hidden;
-
+                    opacity: 1;
                     
                 }
                 
                 #menuBar.slideDown {
-                   transform: translate(0px, 100px);
+                   transform: translate(0px, 150px);
                 }
                 
                 #menuBar.slideUp {
@@ -228,7 +254,7 @@ section {
                 .mainMenuButton.selected {
                     border: none;
                     transition: none;
-                    
+
                 }
                 
                 
@@ -244,10 +270,6 @@ section {
 
             }
 
-            @media screen and (max-width: 30em) {
-                                /* this media query tries to target mobile phones */
-                body {
-                    font-size: .9em
-                }
-            }
+
+ 
 

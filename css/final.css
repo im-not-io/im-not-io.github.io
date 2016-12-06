@@ -1,0 +1,74 @@
+body {
+     background-image: repeating-linear-gradient(-45deg, #edeeef 50px, white 100px);
+    background-size: 0px 100;
+    background-color: white;
+}
+#menuBar {
+    background-color: black;
+}
+
+.visibleContentBox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    color: black;
+    margin-left: 5%;
+    margin-right: 5%;
+    flex-grow: 1;
+}
+
+h1 {
+    display: flex;
+    width: 100%;
+    opacity: 1;
+    color: white;
+    box-shadow: 0px 6px 5px silver;
+}
+.textPictureLine {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+.cardBlock {
+    width: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    box-shadow: 4px 4px 7px silver, -1px -1px 3px silver;
+    background-color: white;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+
+.cardBlock:nth-child(odd) {
+    margin-right: 2%;
+}
+
+.cardBlock:nth-child(even) {
+    margin-left: 2%;
+}
+
+.cardBlock img {
+    margin: auto;
+}
+
+@media screen and (max-width: 60em) {
+    .textPictureLine {
+        flex-direction: column;
+    }
+    .cardBlock {
+        width: 100%;
+        margin: 0;
+        height: auto;
+        margin-bottom: 30px;
+    }
+    .textPictureLine:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+
+}

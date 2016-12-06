@@ -27,15 +27,6 @@ function toggleAboutMeDescription() {
             window.addEventListener("load", function(anotherEvent) {
                 console.log("load fired");
                
-            window.addEventListener("keydown", function(event) {
-
-                if (event.keyCode == 32) {
-                    currentIndex = ++currentIndex % imagesProperties.length
-                    document.body.style.backgroundImage = imagesProperties[currentIndex];
-                    console.log(imagesProperties[currentIndex]);
-                    
-                }
-            });
 
             document.getElementById("learnMoreAboutMeLink").addEventListener("click", function() {
                 toggleAboutMeDescription();
