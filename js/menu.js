@@ -13,6 +13,6 @@
 
             document.getElementById("hamburgerMenu").addEventListener("click", function() {
                 showMenuButtons();
-            });
+            }, false);
 
         });
