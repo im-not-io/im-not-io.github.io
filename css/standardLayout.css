@@ -178,7 +178,6 @@ section {
     display: flex;
     position: absolute;
     width: fit-content;
-    top: 85%;
     font-size: 4em;
     width: 100%;
     justify-content: center;
