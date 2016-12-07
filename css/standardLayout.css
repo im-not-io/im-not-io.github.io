@@ -290,6 +290,7 @@ section {
     box-shadow: 0px 2px 10px black;
     background-size: cover;
     transition: background-size 2s;
+    background-clip: border-box
 }
 
 .cardBlock.aboutMePage {
