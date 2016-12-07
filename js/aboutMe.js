@@ -16,10 +16,9 @@ var currentIndex = 0;
                                    'url("' + dir + '/img/sunsetSiloHeader.jpg")'
                                 ];
                 bg.style.backgroundImage = imageProperties[Math.floor(Math.random() * imageProperties.length)];
-            bg.style.maxWidth = window.innerWidth + "px";
-            bg.style.maxHeight = window.innerHeight + "px";
-            bg.style.height = window.innerWidth + "px";
-            bg.style.width = window.innerHeight + "px";
+            bg.style.height = window.innerHeight + "px";
+            bg.style.width = window.innerWidth + "px";
+            bg.style.backgroundSize = window.innerWidth + "px " + "auto";
             });
             window.addEventListener("load", function(anotherEvent) {
 
