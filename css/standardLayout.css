@@ -181,6 +181,7 @@ section {
     font-size: 4em;
     width: 100%;
     justify-content: center;
+    bottom: 2%;
     animation-name: downArrowMove;
     animation-duration: 15s;
     animation-iteration-count: infinite;
@@ -305,7 +306,7 @@ section {
     color: black;
     text-shadow: none;
     position: absolute;
-    top: 700px;
+    top: 106vh;
     left: 10vw;
 }
 
