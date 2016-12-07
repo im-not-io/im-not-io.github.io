@@ -1,0 +1,33 @@
+.cardBlock {
+    width: 50%;
+    margin-top: 20vh;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    box-shadow: 4px 4px 7px silver, -1px -1px 3px silver;
+    background-color: white;
+    align-items: flex-start;
+    overflow: hidden;
+    color: black;
+    text-shadow: none;
+}
+
+h1 {
+    padding-left: 10px;
+}
+
+.emailLink:link, .emailLink:visited, .emailLink:active {
+    color: black;
+    padding-left: 10px;
+}
+
+body {
+    height: 100%;
+}
+
+@media screen and (max-width: 60em) {
+    .cardBlock {
+        width: 90%;
+    }
+}
