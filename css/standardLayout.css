@@ -275,6 +275,7 @@ section {
 
 
 .backgroundImage {
+    max-height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -285,7 +286,7 @@ section {
     background-repeat: no-repeat;
     background-size:cover;
     background-clip: content-box;
-    min-width: 60em;
+
 
 }
 
