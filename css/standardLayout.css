@@ -282,15 +282,13 @@ section {
 
 
 .backgroundImage {
-    position: absolute;
-    top: 0;
-    left: 0;
     background-color: black;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
     background-repeat: no-repeat;
     box-shadow: 0px 2px 10px black;
+    background-size: cover;
 }
 
 .cardBlock.aboutMePage {
