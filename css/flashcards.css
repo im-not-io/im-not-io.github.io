@@ -1,4 +1,7 @@
- .notecard {
+body {
+    font-size: 1em;
+}
+.notecard {
                 width: 100%;
                 clip-path: circle(30px at 35px 35px);
                 overflow: hidden;
