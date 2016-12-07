@@ -44,6 +44,13 @@ h1 {
     background-color: white;
     align-items: flex-start;
     overflow: hidden;
+    color: black;
+    text-shadow: none;
+}
+
+.cardBlock h1 {
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0,0,0,.7);
 }
 
 
