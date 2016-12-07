@@ -18,6 +18,7 @@ var currentIndex = 0;
                 bg.style.backgroundImage = imageProperties[Math.floor(Math.random() * imageProperties.length)];
             bg.style.maxWidth = window.innerWidth + "px";
             bg.style.maxHeight = window.innerHeight + "px";
+            bg.style.backgroundSize = "cover";
             });
             window.addEventListener("load", function(anotherEvent) {
 
