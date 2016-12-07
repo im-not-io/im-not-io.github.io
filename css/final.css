@@ -24,6 +24,7 @@ h1 {
     opacity: 1;
     color: white;
     box-shadow: 0px 6px 5px silver;
+    margin-bottom: 10px
 }
 .textPictureLine {
     display: flex;

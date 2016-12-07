@@ -42,8 +42,7 @@ function flip(id) {
                 });
             
             document.getElementById("closeButton").addEventListener("click", function() {
-                console.log("attempt");
-                window.close();
+window.history.back();
             });
         });
         
