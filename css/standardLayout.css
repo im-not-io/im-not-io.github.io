@@ -6,7 +6,7 @@
            
 section {       
     position: absolute;
-    top: 30vh;
+    top: 200px;
     right: 0px;
                 display: flex;
                 align-self: flex-start;
@@ -307,7 +307,7 @@ section {
     color: black;
     text-shadow: none;
     position: absolute;
-    top: 110vh;
+    top: 700px;
     left: 10vw;
 }
 
