@@ -3,6 +3,7 @@ var currentIndex = 0;
 
 
             window.addEventListener("DOMContentLoaded", function(event) {
+                var bg = document.querySelector(".backgroundImage");
  var dir = "https://psntnick.github.io";
                                 var imageProperties = [
                                     'url("' + dir + '/img/airportTerminalHeader.jpg")',
@@ -14,12 +15,11 @@ var currentIndex = 0;
                                     'url("' + dir + '/img/shockHeader.jpg")',
                                    'url("' + dir + '/img/sunsetSiloHeader.jpg")'
                                 ];
-                document.querySelector(".backgroundImage").style.backgroundImage = imageProperties[Math.floor(Math.random() * imageProperties.length)];
-                console.log(imageProperties[0]);
-                console.log(document.body.style.backgroundImage);
+                bg.style.backgroundImage = imageProperties[Math.floor(Math.random() * imageProperties.length)];
+            bg.style.maxWidth = window.innerWidth + "px";
+            bg.style.maxHeight = window.innerHeight + "px";
             });
             window.addEventListener("load", function(anotherEvent) {
-                console.log("load fired");
-               
+
 
         });
