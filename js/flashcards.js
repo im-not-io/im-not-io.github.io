@@ -43,6 +43,7 @@ function flip(id) {
             
             document.getElementById("closeButton").addEventListener("click", function() {
 window.history.back();
+                console.log(window.history);
             });
         });
         
