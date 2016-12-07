@@ -200,8 +200,12 @@ section {
 }
   
             @media screen and (max-width: 60em) {
-                
                 /* this media query tries to target tablets */
+                
+                section {
+                    top: 10vh;    
+                }
+                
                 .psntLogo {
                     position: relative;
                     top: 180px;
