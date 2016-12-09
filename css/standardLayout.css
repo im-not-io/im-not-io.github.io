@@ -295,7 +295,7 @@ section {
 
 .cardBlock.aboutMePage {
     width: 50%;
-    height: 400px;
+    height: 110vh;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
