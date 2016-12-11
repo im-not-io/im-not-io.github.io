@@ -1,6 +1,11 @@
-var currentIndex = 0;
+function updateBackgroundSize(bg) {
+    bg.style.width = window.innerWidth + "px";
+    bg.style.height = window.innerHeight + "px";
+}
 
-
+window.addEventListener("resize", function(event) {
+    updateBackgroundSize(document.querySelector(".backgroundImage"));
+});
 
             window.addEventListener("DOMContentLoaded", function(event) {
                 var bg = document.querySelector(".backgroundImage");
@@ -15,5 +20,7 @@ var currentIndex = 0;
                                     'url("' + dir + '/img/shockHeader.jpg")',
                                    'url("' + dir + '/img/sunsetSiloHeader.jpg")'
                                 ];
+                updateBackgroundSize(bg);
                 bg.style.backgroundImage = imageProperties[Math.floor(Math.random() * imageProperties.length)];
+
             });
