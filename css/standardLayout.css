@@ -2,7 +2,6 @@
     outline: none;
 }
 
-
            
 section {       
     position: absolute;
@@ -88,7 +87,6 @@ section {
                     /*white-space: nowrap;  no ugly text wrapping if our screen is shrunk */
                         text-shadow: 2px 2px 10px rgba(0,0,0,.7);
                     height: 1350px;
-                    overflow-x: hidden;
                 }
 
                 body.loadBackgroundImages {
