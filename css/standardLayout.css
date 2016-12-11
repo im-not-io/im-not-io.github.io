@@ -3,6 +3,9 @@
 
 }
 
+html {
+    overflow-x: hidden;
+}
            
 section {       
     position: absolute;
@@ -292,7 +295,6 @@ section {
     background-repeat: no-repeat;
     box-shadow: 0px 2px 10px black;
     background-size: cover;
-    transition: background-size 2s;
 }
 
 .cardBlock.aboutMePage {
