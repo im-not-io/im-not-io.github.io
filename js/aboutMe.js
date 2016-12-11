@@ -21,6 +21,7 @@ window.addEventListener("resize", function(event) {
                                    'url("' + dir + '/img/sunsetSiloHeader.jpg")'
                                 ];
                 updateBackgroundSize(bg);
+                bg.maxHeight = window.innerHeight;
                 bg.style.backgroundImage = imageProperties[Math.floor(Math.random() * imageProperties.length)];
 
             });
