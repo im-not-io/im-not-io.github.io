@@ -15,11 +15,10 @@
                                    'url("' + dir + '/img/sunsetSiloHeader.jpg")'
                                 ];
                 bg.style.backgroundImage = imageProperties[Math.floor(Math.random() * imageProperties.length)];
-
-            });
-
-window.addEventListener("click", function(event) {
+document.querySelector(".downArrow").addEventListener("click", function(event) {
 $('body').animate({
-    scrollTop: $(".cardHeader").offset().top
+    scrollTop: $(".cardBlock").offset().top
  }, 1000);
 });
+            });
+
