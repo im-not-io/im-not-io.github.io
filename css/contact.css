@@ -8,7 +8,6 @@
     background-color: white;
     align-items: flex-start;
     justify-content: flex-start;
-    overflow: hidden;
     color: black;
     text-shadow: none;
 }
@@ -16,7 +15,7 @@
 
 a {
     padding-left: 3.5%;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .emailLink:link, .emailLink:visited, .emailLink:active {
