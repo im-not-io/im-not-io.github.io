@@ -304,20 +304,20 @@ section {
 }
 
 .cardBlock.aboutMePage {
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     box-shadow: 4px 4px 7px silver, -1px -1px 3px silver;
     background-color: white;
     align-items: flex-start;
-    overflow: hidden;
     color: black;
     text-shadow: none;
     position: absolute;
     top: 106vh;
-    left: 10vw;
-    font-size: 1.4em;
+    left: 3vw;
+    font-size: 1.2em;
+    padding: 2%;
 }
 
 h1.cardHeader {
@@ -334,3 +334,10 @@ h1.cardHeader {
     padding-right: 1.5em;
 }
 
+#psntnickFace {
+    margin-bottom: 2.5%;
+    display: flex;
+    align-self: center;
+    width: 250px;
+    height: auto;  
+}
