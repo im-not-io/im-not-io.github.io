@@ -1,11 +1,5 @@
-function updateBackgroundSize(bg) {
-    bg.style.width = window.innerWidth + "px";
-    bg.style.height = window.innerHeight + "px";
-}
 
-window.addEventListener("resize", function(event) {
-    updateBackgroundSize(document.querySelector(".backgroundImage"));
-});
+
 
             window.addEventListener("DOMContentLoaded", function(event) {
                 var bg = document.querySelector(".backgroundImage");
@@ -20,8 +14,12 @@ window.addEventListener("resize", function(event) {
                                     'url("' + dir + '/img/shockHeader.jpg")',
                                    'url("' + dir + '/img/sunsetSiloHeader.jpg")'
                                 ];
-                updateBackgroundSize(bg);
-                bg.maxHeight = window.innerHeight;
                 bg.style.backgroundImage = imageProperties[Math.floor(Math.random() * imageProperties.length)];
 
             });
+
+window.addEventListener("click", function(event) {
+$('body').animate({
+    scrollTop: $(".cardHeader").offset().top
+ }, 1000);
+});

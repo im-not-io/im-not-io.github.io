@@ -10,7 +10,7 @@ body {
 .visibleContentBox {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 4em;
     color: black;
     margin-left: 5%;
     margin-right: 5%;
@@ -25,12 +25,13 @@ h1 {
     opacity: 1;
     color: white;
     box-shadow: 0px 6px 5px silver;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 .mainTitle {
     background-color: black;
     font-size: 3em;
+    margin-top: .7em;
 }
 .textPictureLine {
     display: flex;
@@ -42,19 +43,21 @@ h1 {
 
 .cardBlock {
     width: 50%;
-    height: 400px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     box-shadow: 4px 4px 7px silver, -1px -1px 3px silver;
     background-color: white;
     align-items: flex-start;
+    justify-content: center;
     overflow: hidden;
     color: black;
     text-shadow: none;
 }
 
 .cardBlock h1 {
+    padding-left: 3%;
+    padding-right: 3%;
     color: white;
     text-shadow: 2px 2px 10px rgba(0,0,0,.7);
 }
@@ -70,11 +73,31 @@ h1 {
 
 .cardBlock img {
     margin: auto;
+    padding: 3%;
+    width: 95%;
+    height: auto;
+}
+
+.cardBlock span {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 2%;
+}
+
+.cardBlock a {
+    color: black;
+    text-decoration: underline;
+}
+
+.cardBlock div {
+        padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 3%;
 }
 
 @media screen and (max-width: 60em) {
     .textPictureLine {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .cardBlock {
         width: 100%;
@@ -83,7 +106,7 @@ h1 {
         margin-bottom: 30px;
     }
     .textPictureLine:nth-child(even) {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
 }
