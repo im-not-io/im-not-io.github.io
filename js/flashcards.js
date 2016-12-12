@@ -14,7 +14,6 @@ function flip(id) {
                 default:
                     throw "flippableElement not detected."     
             }
-    console.log("id: " + id + " " + flippableElement.className);
 
         }
         
@@ -24,7 +23,6 @@ function flip(id) {
 
             document.getElementById("flipButton").addEventListener("click", function() {
                     //flip both the question and answer divs when the flip button is clicked
-                    console.log("flip attempt")
                     flip("notecardQuestion");
                     flip("notecardAnswer");
 
@@ -43,7 +41,6 @@ function flip(id) {
             
             document.getElementById("closeButton").addEventListener("click", function() {
 window.history.back();
-                console.log(window.history);
             });
         });
         
