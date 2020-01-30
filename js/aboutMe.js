@@ -3,7 +3,7 @@
 
             window.addEventListener("DOMContentLoaded", function(event) {
                 var bg = document.querySelector(".backgroundImage");
- var dir = "https://psntnick.github.io";
+ var dir = "https://im-not-io.github.io";
                                 var imageProperties = [
                                     'url("' + dir + '/img/airportTerminalHeader.jpg")',
                                     'url("' + dir + '/img/boatWaitingHeader.jpg")',
