@@ -1,4 +1,4 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-        document.getElementById("email").href += "mailto:in4matx133emailer" + "@gm" + "ail." + "com";
-        document.getElementById("email").textContent += "in4matx133emailer" + "@gm" + "ail." + "com";
+        document.getElementById("email").href += "mailto:forwarded.to.nick.digeronimo@gmail.com" + "@gm" + "ail." + "com";
+        document.getElementById("email").textContent += "forwarded.to.nick.digeronimo@gmail.com" + "@gm" + "ail." + "com";
 });
