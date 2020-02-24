@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>A demo for Mike Carey</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+    integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fafafa;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      padding: 0px;
+      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
+      border-radius: 11px;
+      background-color: white;
+    }
+
+    .cardArea {
+      display: flex;
+      flex-grow: 10;
+      padding: 5%;
+      /*
+      background-color: red;
+      border: solid black 1px;
+      */
+    }
+
+    .buttonArea {
+      display: flex;
+      flex-grow: 1;
+      /*background-color: blue;
+      border: solid black 1px;*/
+    }
+
+    input[type="button"] {
+      border: none;
+      display: flex;
+      flex-grow: 1;
+      align-content: center;
+      justify-content: center;
+      box-shadow: inset 0px 1px 0px 0px #ffffff;
+      background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+      background-color: #ededed;
+      display: inline-block;
+      cursor: pointer;
+      color: #777777;
+      font-family: Arial;
+      font-weight: bold;
+      padding: 6px 24px;
+      text-decoration: none;
+      text-shadow: 0px 1px 0px #ffffff;
+
+      font-size: 1.5em;
+      outline-color: coral;
+    }
+
+    .previous {
+      outline: 0;
+      border-bottom-left-radius: 11px;
+    }
+
+    .next {
+      outline: 0;
+      border-bottom-right-radius: 11px;
+    }
+
+    h3 {
+      font-size: 1.5em;
+    }
+
+
+
+    input[type="button"]:hover {
+      background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+      background-color: #dfdfdf;
+    }
+
+    input[type="button"]:active {
+      position: relative;
+      top: 1px;
+    }
+
+    .cardContent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity .2s;
+    }
+
+    .fade-enter,
+    .fade-leave-to
+
+    /* .fade-leave-active below version 2.1.8 */
+      {
+      opacity: 0;
+    }
+
+    .component-fade-enter-active,
+    .component-fade-leave-active {
+      transition: opacity .3s ease;
+    }
+
+    .component-fade-enter,
+    .component-fade-leave-to
+
+    /* .component-fade-leave-active below version 2.1.8 */
+      {
+      opacity: 0;
+    }
+
+    p {
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="cardArea">
+      <transition name="fade" mode="out-in">
+        <component v-bind:is="view" class="cardContent"></component>
+      </transition>
+    </div>
+    <div class="buttonArea">
+      <input type="button" v-on:click="previousCard" value="Previous" class="previous">
+      <input type="button" v-on:click="nextCard" value="Next" class="next">
+    </div>
+
+  </div>
+  <script>
+    function one() {
+      console.clear();
+      console.log(
+        "If you see this you're ready to go! The code you see on screen is executed in the browser and displayed in the DevTools console."
+        );
+    }
+
+    function two() {
+      console.clear();
+      doesThisWork();
+
+      function doesThisWork() {
+        console.log("Yes it does!");
+      }
+    }
+
+    function three() {
+      console.clear();
+    }
+
+    function four() {
+      console.clear();
+      //adds the returned results from two() to
+
+      //the current sum which is 1 because
+
+      //of the hoisting
+
+      sum = two() + sum;
+
+      function one() {
+
+        return 1; //returns number 1
+
+      }
+
+      function two() {
+
+        //sets sum variable to 1 and "hoists" it
+
+        //to the top of the code
+
+        sum = one();
+
+        return 2; //returns number 2
+
+      }
+
+      console.log(sum); //prints 3
+
+    }
+
+    function five() {
+      console.clear();
+      console.log(b);
+      let b = "b";
+    }
+
+    function six() {
+      console.clear();
+      console.log(
+        "Link to an article about hoisting: https://medium.com/javascript-in-plain-english/https-medium-com-javascript-in-plain-english-what-is-hoisting-in-javascript-a63c1b2267a1 That's all folks!"
+        )
+    }
+
+
+
+    new Vue({
+      el: '.container',
+      data: {
+        view: 'v-a',
+        keys: ["v-a", "v-b", "v-c", "v-d", "v-e", "v-f"],
+        functions: [one, two, three, four, five, six],
+        position: 0
+
+      },
+      components: {
+        'v-a': {
+          template: `
+          <div>
+          <h3>Hello Professor Carey! 👋</h3>
+          <p>Open Chrome DevTools (Menu -> More Tools -> Developer Tools), click the Console tab, and use the triple dot menu in DevTools to set the Dock Side to Dock to Right (this is easier to see).</p>
+          </div>
+          `
+        },
+        'v-b': {
+          template: `<div>
+            <h3>JavaScript function magic</h3>
+            <pre><br>doesThisWork();
+              <br>function doesThisWork() {
+              <br>console.log("Yes it does!");
+              <br>}
+            </pre>
+          </div>`
+        },
+        'v-c': {
+          template: `<div>
+            <h3>Why?</h3>
+            <p>Certain variables and function declarations in JavaScript are <i>hoisted</i> which means you can access variables and functions anywhere in the same scope of the code.</p>
+          </div>`
+
+        },
+        'v-d': {
+          template: `<div>
+            <h3>This wonky code is actualy valid JavaScript!</h3>
+            <pre>//adds the returned results from two() to
+              <br>//the current sum which is 1 because
+              <br>//of the hoisting
+              <br>sum = two() + sum; 
+              <br>function one() {
+              <br>return 1; //returns number 1
+              <br>}
+              <br>function two() {
+              <br>//sets sum variable to 1 and "hoists" it
+              <br>//to the top of the code
+              <br>sum = one();
+              <br>return 2; //returns number 2
+              <br>}
+              <br>console.log(sum); //prints 3
+            </pre>
+          </div>`
+        },
+        'v-e': {
+          template: `<div>
+            <h3>How can we stop this?</h3>
+            Using let or const keywords doesn't disable hoisting, but it forces the variable to be uninitialized resulting in an error. Alternatively using the "use strict" directive allows the interpreter to run in a stricter mode.
+            <pre>console.log(b);
+            <br>let b = "b";
+            </pre>
+          
+          </div>`
+        },
+        'v-f': {
+          template: `<div>
+            <h3>The hard truth</h3>
+            <p>JavaScript probably isn't the most ideal programming language ever created, but the web runs on JavaScript and it's the only programming language universally supported across browsers. And that makes it a powerful tool, nonetheless!</p>
+          </div>`
+        }
+
+      },
+      methods: {
+        nextCard: function (event) {
+
+          if (this.position < this.keys.length - 1) {
+            this.position++;
+            this.view = this.keys[this.position]
+            this.functions[this.position]();
+          }
+        },
+        previousCard: function (event) {
+
+          if (this.position > 0) {
+            console.log("previous");
+            this.position--;
+            this.view = this.keys[this.position]
+            this.functions[this.position]();
+          }
+        }
+
+      }
+    })
+  </script>
+</body>
+
+</html>
